@@ -1,0 +1,44 @@
+﻿@model IEnumerable<InventoryManagement.Models.Inventory>
+@{
+    ViewData["Title"] = "Inventory List";
+}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>All data under title of Inventory stored in a txt file!</strong>
+</div>
+<nav class="navbar navbar-light bg-light">
+    <form class="container-fluid justify-content-end">
+        <a class="nav-link" asp-controller="Inventory" asp-action="Create">Add New Inventory</a>
+    </form>
+</nav>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Bought Date</td>
+            <td>Serial Number</td>
+            <td>Owner Name</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var inventory in Model)
+            {
+                <tr>
+                    <td>@inventory.Id</td>
+                    <td>@inventory.Name</td>
+                    <td>@inventory.DateBought</td>
+                    <td>@inventory.SerialNumber</td>
+                    <td>@inventory.OwnerName</td>
+                    <td>
+                        <a type="button" asp-controller="Inventory" asp-action="Detail" asp-route-id="@inventory.Id" class="btn btn-outline-info btn-sm btn-block">Detail</a>
+                        <a type="button" asp-controller="Inventory" asp-action="Delete" asp-route-id="@inventory.Id" class="btn btn-outline-danger btn-sm btn-block">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>

@@ -1,0 +1,15 @@
+﻿@model InventoryManagement.ViewModels.InventoryDetailViewModel
+@{
+
+    ViewData["Title"] = "Inventory Detail";
+}
+@if (@Model.inventory != null)
+{
+    <ul>
+        <li>Inventory Id = @Model.inventory.Id</li>
+        <li>Inventory Name = @Model.inventory.Name</li>
+        <li>Inventory Owner = @Model.inventory.OwnerName</li>
+        <li>Inventory Serial Number = @Model.inventory.SerialNumber</li>
+        <li>Inventory Bought Date = @Model.inventory.DateBought</li>
+    </ul>
+}

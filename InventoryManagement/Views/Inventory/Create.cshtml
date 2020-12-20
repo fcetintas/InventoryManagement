@@ -1,0 +1,37 @@
+﻿@model Inventory
+@{
+    ViewData["Title"] = "Inventory Creation";
+}
+
+<form asp-controller="Inventory" asp-action="Create" method="POST">
+    <div class="row mb-3">
+        <label asp-for="Name" class="col-sm-2 col-form-label col-form-label-sm"></label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="Name">
+        </div>
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="DateBought" class="col-sm-2 col-form-label col-form-label-sm"></label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="DateBought">
+        </div>
+        <span asp-validation-for="DateBought"></span>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="SerialNumber" class="col-sm-2 col-form-label col-form-label-sm"></label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="SerialNumber">
+        </div>
+        <span asp-validation-for="SerialNumber"></span>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="OwnerName" class="col-sm-2 col-form-label col-form-label-sm"></label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="OwnerName">
+        </div>
+        <span asp-validation-for="OwnerName"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
